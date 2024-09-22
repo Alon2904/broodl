@@ -6,7 +6,7 @@ import { useAuth } from '@/context/AuthContext';
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '@/firebase';
 import Loading from './Loading';
-import Login from './Login';
+import Login from '@/components/Login';
 
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ['400'] });
 

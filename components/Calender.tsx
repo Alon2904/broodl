@@ -80,6 +80,7 @@ const Calendar: React.FC<CalendarProps> = ({ demo, completeData, handleSetMood }
                 }} className='ml-auto text-indigo-400 text-lg sm:text-xl duration-200 hover:opacity-60'><i className="fa-solid fa-circle-chevron-right"></i></button>
             </div>
             <div className='flex flex-col overflow-hidden gap-1 py-4 sm:py-6 md:py-10'>
+                
                 {[...Array(numRows).keys()].map((row, rowIndex) => {
                     return (
                         <div key={rowIndex} className='grid grid-cols-7 gap-1'>

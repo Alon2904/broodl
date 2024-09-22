@@ -2,8 +2,9 @@ import React from 'react';
 import type { Metadata } from "next";
 import Main from '@/components/Main';
 import Dashboard from '@/components/Dashboard';
-import Login from '@/components/Login';
 import Hero from '@/components/Hero';
+import { useAuth } from '@/context/AuthContext';
+import Loading from '@/components/Loading';
 
 
 export const metadata: Metadata = {
@@ -11,15 +12,14 @@ export const metadata: Metadata = {
     description: "Track your mood, every day." 
 };
 
-const isAuthenticated: boolean = true;
 
 const DashboardPage: React.FC = () => {
+
+ 
+
     return (
         <Main>
-            {isAuthenticated ? <Dashboard /> : <>
-                
-                <Login />
-            </>}
+            <Dashboard /> 
         </Main>
     );
 };
