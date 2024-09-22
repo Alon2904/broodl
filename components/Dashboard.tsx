@@ -33,10 +33,11 @@ const Dashboard: React.FC = () => {
   function countValues(): { num_days: number; average_mood: number } {
     let total_number_of_days = 0;
     let sum_moods = 0;
-    for (let year in data) {
-      for (let month in data[year]) {
-        for (let day in data[year][month]) {
-          let days_mood = data[year][month][day];
+
+    for (const year in data) {
+      for (const month in data[year]) {
+        for (const day in data[year][month]) {
+          const days_mood = data[year][month][day];
           total_number_of_days++;
           sum_moods += days_mood;
         }
@@ -76,9 +77,11 @@ const Dashboard: React.FC = () => {
           },
         },
       }, { merge: true });
+      /* eslint-disable @typescript-eslint/no-explicit-any */
     } catch (err: any) {
       console.log('Failed to set data: ', err.message);
     }
+    /* eslint-enable @typescript-eslint/no-explicit-any */
   }
 
   const moods: { [key: string]: string } = {

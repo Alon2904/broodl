@@ -1,9 +1,7 @@
 'use client';
 import React from 'react';
 import { Fugaz_One } from "next/font/google";
-import Button from './Button';
 import Calender from './Calender';
-import Link from 'next/link';
 import CallToAction from './callToAction';
 
 const fugazOne = Fugaz_One({

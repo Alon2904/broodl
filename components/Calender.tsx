@@ -1,3 +1,4 @@
+// Updated Calendar component with correct comment placement
 'use client'
 import { baseRating, gradients } from '@/utils'
 import { Fugaz_One } from "next/font/google";
@@ -6,7 +7,7 @@ import React, { useState } from 'react'
 // Define the types for the props
 interface CalendarProps {
     demo: boolean;
-    completeData: Record<number, Record<number, Record<number, any>>>; // Adjust the nested Record types as needed based on the structure of your data
+    completeData: Record<number, Record<number, Record<number, number>>>; // Adjust the nested Record types as needed based on the structure of your data
     handleSetMood: (day: number, mood: number) => void;
 }
 
@@ -26,7 +27,6 @@ const months: Record<string, string> = {
     'December': 'Dec' 
 };
 const monthsArr = Object.keys(months);
-const now = new Date();
 const dayList = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 // Set up the font
@@ -35,7 +35,7 @@ const fugazOne = Fugaz_One({
     weight: "400",
   });
 
-const Calendar: React.FC<CalendarProps> = ({ demo, completeData, handleSetMood }) => {
+const Calendar: React.FC<CalendarProps> = ({ demo, completeData }) => {
     const now = new Date();
     const currMonth = now.getMonth();
     const [selectedMonth, setSelectMonth] = useState<string>(Object.keys(months)[currMonth]);
@@ -84,12 +84,13 @@ const Calendar: React.FC<CalendarProps> = ({ demo, completeData, handleSetMood }
                 {[...Array(numRows).keys()].map((row, rowIndex) => {
                     return (
                         <div key={rowIndex} className='grid grid-cols-7 gap-1'>
+                            
                             {dayList.map((dayOfWeek, dayOfWeekIndex) => {
-                                let dayIndex = (rowIndex * 7) + dayOfWeekIndex - (firstDayOfMonth - 1);
+                                const dayIndex = (rowIndex * 7) + dayOfWeekIndex - (firstDayOfMonth - 1);
 
-                                let dayDisplay = dayIndex > daysInMonth ? false : (row === 0 && dayOfWeekIndex < firstDayOfMonth) ? false : true;
+                                const dayDisplay = dayIndex > daysInMonth ? false : (row === 0 && dayOfWeekIndex < firstDayOfMonth) ? false : true;
 
-                                let isToday = dayIndex === now.getDate();
+                                const isToday = dayIndex === now.getDate();
 
                                 if (!dayDisplay) {
                                     return (
@@ -97,7 +98,7 @@ const Calendar: React.FC<CalendarProps> = ({ demo, completeData, handleSetMood }
                                     )
                                 }
 
-                                let color = demo ?
+                                const color = demo ?
                                     gradients.indigo[baseRating[dayIndex]] :
                                     dayIndex in data ?
                                         gradients.indigo[data[dayIndex]] :
