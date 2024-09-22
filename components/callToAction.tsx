@@ -16,10 +16,10 @@ const CallToAction: React.FC = () => {
                     </Link>
                 ) : (
                     <>
-                        <Link href={'/signup'}>
+                        <Link href={'/dashboard'}>
                             <Button label='Sign Up' onClick={() => console.log('Sign Up clicked')} />
                         </Link>
-                        <Link href={'/login'}>
+                        <Link href={'/dashboard'}>
                             <Button label='Log In' onClick={() => console.log('Log In clicked')} dark />
                         </Link>
                     </>

@@ -6,6 +6,7 @@ import Link from "next/link";
 
 import AuthProvider from "../context/AuthContext";
 import Head from "./head";
+import Logout from "@/components/Logout";
 
 const fugazOne = Fugaz_One({
   subsets: ["latin"],
@@ -24,7 +25,9 @@ const header = (
         Broodl
       </h1>
     </Link>
-    <div className=" flex items-center justify-between">PLACEHOLDER</div>
+    <div className=" flex items-center justify-between">
+      <Logout/>
+    </div>
   </header>
 );
 
