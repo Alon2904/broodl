@@ -134,7 +134,7 @@ const Dashboard: React.FC = () => {
           </button>
         ))}
       </div>
-      <Calendar completeData={data} handleSetMood={handleSetMood} />
+      <Calendar completeData={data} handleSetMood={handleSetMood} demo={false} />
     </div>
   );
 };

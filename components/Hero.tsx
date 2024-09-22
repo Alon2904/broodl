@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
             <div className='flex justify-center items-center w-full'>
                 <CallToAction />
             </div>
-            <Calender  demo={true}/>
+            <Calender demo={true} completeData={[]} handleSetMood={() => {}} />
         </div>
 
     );
