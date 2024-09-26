@@ -6,7 +6,7 @@ import Dashboard from '@/components/Dashboard';
 
 
 export const metadata: Metadata = {
-    title: "Broodl - Dashboard",
+    title: "Moodly - Dashboard",
     description: "Track your mood, every day." 
 };
 

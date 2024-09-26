@@ -14,7 +14,7 @@ const fugazOne = Fugaz_One({
 });
 
 export const metadata: Metadata = {
-  title: "Broodl",
+  title: "Moodly",
   description: "Track you mood, everyday.",
 };
 
